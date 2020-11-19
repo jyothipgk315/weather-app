@@ -1,0 +1,11 @@
+<header>
+  <a>
+    <div class="image"><img src="assets/images/logo.png" alt="img" /></div>
+    <div class="title">sunlight</div>
+  </a>
+  <ul>
+    <li>{{ myDate | date }}</li>
+    <li>{{ myDate | date: "shortTime" }}</li>
+  </ul>
+</header>
+<router-outlet></router-outlet>

@@ -1,0 +1,64 @@
+<div class="location_details">
+  <div class="title_sec">
+    <button (click)="gotoHome()">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </button>
+    <div class="title">{{ respons.name }}</div>
+  </div>
+  <div class="info details">
+    <div class="temperature">
+      <div class="temp">
+        <strong>{{ respons.temperature }}</strong> <span>°C</span>
+      </div>
+      <div class="weather">{{ respons.weather[0].description }}</div>
+    </div>
+    <div class="humidity cont">
+      <div class="content_title">humidity</div>
+      <div class="content">{{ respons.main.humidity }} %</div>
+    </div>
+    <div class="pressure cont">
+      <div class="content_title">pressure</div>
+      <div class="content">{{ respons.main.pressure }} mb</div>
+    </div>
+  </div>
+  <div class="wind details">
+    <div class="highest contents">
+      <div class="content_title">highest</div>
+      <div class="content">{{ respons.temperature_max }}°C</div>
+    </div>
+    <div class="lowest contents">
+      <div class="content_title">lowest</div>
+      <div class="content">{{ respons.temperature_min }}°C</div>
+    </div>
+    <div class="wind_speed contents">
+      <div class="content_title">wind speed</div>
+      <div class="content">{{ respons.wind.speed }}</div>
+    </div>
+    <div class="wind_degree contents">
+      <div class="content_title">wind degree</div>
+      <div class="content">{{ respons.wind.deg }}</div>
+    </div>
+  </div>
+  <div class="area details">
+    <div class="lat contents">
+      <div class="content_title">latitude</div>
+      <div class="content">{{ respons.coord.lat }}</div>
+    </div>
+    <div class="log contents">
+      <div class="content_title">longitude</div>
+      <div class="content">{{ respons.coord.lon }}</div>
+    </div>
+    <div class="sunrise contents">
+      <div class="content_title">sunrise</div>
+      <div class="content">
+        {{ respons.sys.sunrise * 1000 | date: "shortTime" }}
+      </div>
+    </div>
+    <div class="sunset contents">
+      <div class="content_title">sunset</div>
+      <div class="content">
+        {{ respons.sys.sunset * 1000 | date: "shortTime" }}
+      </div>
+    </div>
+  </div>
+</div>

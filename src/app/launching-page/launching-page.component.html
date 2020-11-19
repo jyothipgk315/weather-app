@@ -1,0 +1,20 @@
+<div class="search">
+  <input type="text" placeholder="search..." #userinput />
+  <button (click)="getCity(userinput.value)">search</button>
+</div>
+<div *ngIf="errorMessage" class="err_msg">
+  <span>Location not found! Try another.</span>
+</div>
+
+<div class="locations">
+  <div class="Inbulit_location" *ngFor="let location of copyItems">
+    <a [routerLink]="['/location']" [queryParams]="{ cityname: location.name }">
+      <div class="title">{{ location.name }}</div>
+      <div class="temperature">
+        <strong>{{ (location.main.temp - 273.15).toFixed(0) }}</strong>
+        <small>°C</small>
+      </div>
+      <div class="weather">{{ location.weather[0].description }}</div>
+    </a>
+  </div>
+</div>
